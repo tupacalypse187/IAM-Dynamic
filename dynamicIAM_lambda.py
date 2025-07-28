@@ -320,7 +320,7 @@ if st.session_state.stage == "review":
                     )
                     st.session_state.creds = creds
                     st.success("Credentials approved and issued.")
-                    approver = "Approver Name"
+                    approver = st.session_state.get("approver_name", "Unknown Approver")
                     slack_msg = slack_message(False, st.session_state.req_text, st.session_state.risk, display_duration, approver=approver)
                     send_slack(slack_msg)
                 except Exception as e:
