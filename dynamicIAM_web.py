@@ -19,7 +19,8 @@ load_dotenv()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 SLACK_WEBHOOK_URL = os.getenv("SLACK_WEBHOOK_URL")
 ACCOUNT_ID = os.getenv("AWS_ACCOUNT_ID")
-ROLE_ARN = f"arn:aws:iam::{ACCOUNT_ID}:role/AgentPOCSessionRole"
+ROLE_NAME = os.getenv("AWS_ROLE_NAME", "AgentPOCSessionRole")  # Default to 'AgentPOCSessionRole' if not set
+ROLE_ARN = f"arn:aws:iam::{ACCOUNT_ID}:role/{ROLE_NAME}"
 sts_client = boto3.client("sts")
 
 # Configure OpenAI client
