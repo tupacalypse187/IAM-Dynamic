@@ -65,12 +65,16 @@ requests
 ## 🧪 Getting Started (Local Dev)
 
 ### Clone repo
-`git clone https://github.com/tupacalypse187/dynamicIAM.git`
-cd dynamicIAM`
+```
+git clone https://github.com/tupacalypse187/dynamicIAM.git`
+cd dynamicIAM
+```
 
 ### Create virtual environment
-`python3 -m venv venv
-source venv/bin/activate`
+```
+python3 -m venv venv
+source venv/bin/activate
+```
 
 ### Install requirements
 `pip install -r requirements.txt`
@@ -80,6 +84,7 @@ source venv/bin/activate`
 cat > .env <<EOF
 OPENAI_API_KEY=sk-your-actual-openai-api-key-here
 SLACK_WEBHOOK_URL=https://hooks.slack.com/services/…
+AWS_ACCOUNT_ID=aws-account-id
 EOF
 ```
 
@@ -103,6 +108,7 @@ To access: [http://localhost:8501](http://localhost:8501)
 ---
 
 ## 🧠 How It Works
+```
 ┌──────────────┐     Request     ┌─────────────┐       ┌────────────────────┐
 │   Web App    │ ─────────────▶ │ GPT-4 / LLM │──────▶│ IAM Policy + Risk  │
 └──────────────┘                 └─────────────┘       └────────────────────┘
@@ -111,7 +117,7 @@ To access: [http://localhost:8501](http://localhost:8501)
      └────────────────────────────────────────────────────────▶ 
                          AWS STS / Lambda
                        Temporary Credentials
-
+```
 
 - Streamlit receives user text input and session duration
 - LLM generates IAM policy + Risk + Explanation
