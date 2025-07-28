@@ -1,4 +1,4 @@
-# 🔐 dynamicIAM
+# 🔐 IAM-Dynamic
 
 AI-Driven Just-In-Time AWS IAM Access Request Portal
 
@@ -66,8 +66,8 @@ requests
 
 ### Clone repo
 ```
-git clone https://github.com/tupacalypse187/dynamicIAM.git`
-cd dynamicIAM
+git clone https://github.com/tupacalypse187/IAM-Dynamic.git`
+cd IAM-Dynamic
 ```
 
 ### Create virtual environment
