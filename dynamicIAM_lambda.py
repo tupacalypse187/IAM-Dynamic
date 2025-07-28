@@ -136,7 +136,7 @@ def assume_role_with_policy_via_lambda(policy_json, duration_hours, requester="w
     }
     try:
         response = lambda_client.invoke(
-            FunctionName='credential-issuer',
+            FunctionName=os.environ.get("LAMBDA_FUNCTION_NAME", "credential-issuer"),
             InvocationType='RequestResponse',
             Payload=json.dumps(payload)
         )
