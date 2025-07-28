@@ -284,7 +284,7 @@ if st.session_state.stage == "review":
                     creds = assume_role(st.session_state.policy, display_duration)
                     st.session_state.creds = creds
                     st.success("Credentials approved and issued.")
-                    approver = "Approver Name"  # Replace with current user if available
+                    approver = os.getenv("APPROVER_NAME", "Unknown Approver")  # Retrieve approver name from environment variable or use fallback
                     slack_msg = slack_message(False, st.session_state.req_text, st.session_state.risk, display_duration, approver=approver)
                     send_slack(slack_msg)
                 except Exception as e:
