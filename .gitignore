@@ -1,3 +1,8 @@
+# Ignore all files in the .vscode directory
+.vscode/
+.DS_Store
+*.zip
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

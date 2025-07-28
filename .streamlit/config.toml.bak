@@ -1,0 +1,15 @@
+[theme]
+base="light"
+primaryColor="#7c3aed"
+backgroundColor="#f9fafb"
+secondaryBackgroundColor="#ffffff"
+textColor="#1e293b"
+font="sans serif"
+
+[server]
+headless = true
+enableCORS = false
+
+[ui]
+layout = "centered"
+
