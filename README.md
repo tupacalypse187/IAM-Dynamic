@@ -8,7 +8,7 @@ AI-Driven Just-In-Time AWS IAM Access Request Portal
 
 ## 🚀 Overview
 
-DynamicIAM is a secure, user-friendly Streamlit app that empowers users to request time-limited AWS IAM credentials using natural language prompts, with:
+IAM-Dynamic is a secure, user-friendly Streamlit app that empowers users to request time-limited AWS IAM credentials using natural language prompts, with:
 - Auto-generated IAM policies via OpenAI
 - Risk scoring (low, medium, high, critical)
 - Auto-approval for low-risk requests
