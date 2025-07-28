@@ -1,5 +1,7 @@
 import json
 import boto3
+import os
+import logging
 from datetime import datetime, timezone
 
 def lambda_handler(event, context):
@@ -27,12 +29,12 @@ def lambda_handler(event, context):
             }
         
         # Configuration - use environment variables in production
-ACCOUNT_ID = os.environ.get('ACCOUNT_ID')
-if not ACCOUNT_ID:
-    return {
-        'statusCode': 500,
-        'body': json.dumps({'error': 'ACCOUNT_ID environment variable not configured'})
-    }
+        ACCOUNT_ID = os.environ.get('ACCOUNT_ID')
+        if not ACCOUNT_ID:
+            return {
+                'statusCode': 500,
+                'body': json.dumps({'error': 'ACCOUNT_ID environment variable not configured'})
+            }
         ROLE_ARN = f"arn:aws:iam::{ACCOUNT_ID}:role/AgentPOCSessionRole"
         
         # Create STS client
@@ -73,7 +75,6 @@ if not ACCOUNT_ID:
                 }
             }, default=str)
         }
-        
     except Exception as e:
         # Log error (CloudWatch)
         logging.error(f"Error issuing credentials: {str(e)}", exc_info=True)
