@@ -65,7 +65,8 @@ requests
 ## 🧪 Getting Started (Local Dev)
 
 ### Clone repo
-`git clone https://github.com/tupacalypse187/dynamicIAM.gitcd dynamicIAM`
+`git clone https://github.com/tupacalypse187/dynamicIAM.git
+cd dynamicIAM`
 
 ### Create virtual environment
 `python3 -m venv venvsource venv/bin/activate`
