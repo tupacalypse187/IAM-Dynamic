@@ -76,7 +76,7 @@ if not ACCOUNT_ID:
         
     except Exception as e:
         # Log error (CloudWatch)
-        print(f"Error issuing credentials: {str(e)}")
+        logging.error(f"Error issuing credentials: {str(e)}", exc_info=True)
         return {
             'statusCode': 500,
             'body': json.dumps({'error': f'Failed to issue credentials: {str(e)}'})
