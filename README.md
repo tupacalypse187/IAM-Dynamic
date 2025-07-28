@@ -96,7 +96,7 @@ Then open [http://localhost:8501](http://localhost:8501) in your browser.
 `docker build -t dynamiciam .`
 
 ### Run container (port 8501)
-`docker run -p 8501:8501 –env-file .env dynamiciam`
+`docker run -p 8501:8501 --env-file .env dynamiciam`
 
 To access: [http://localhost:8501](http://localhost:8501)
 
