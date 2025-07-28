@@ -27,7 +27,12 @@ def lambda_handler(event, context):
             }
         
         # Configuration - use environment variables in production
-        ACCOUNT_ID = "467266701745"  # Replace with your account ID
+ACCOUNT_ID = os.environ.get('ACCOUNT_ID')
+if not ACCOUNT_ID:
+    return {
+        'statusCode': 500,
+        'body': json.dumps({'error': 'ACCOUNT_ID environment variable not configured'})
+    }
         ROLE_ARN = f"arn:aws:iam::{ACCOUNT_ID}:role/AgentPOCSessionRole"
         
         # Create STS client
