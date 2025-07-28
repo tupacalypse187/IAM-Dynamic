@@ -78,7 +78,7 @@ source venv/bin/activate`
 ### Set local environment variables (create .env)
 ```
 cat > .env <<EOF
-OPENAI_API_KEY=your_openai_key
+OPENAI_API_KEY=sk-your-actual-openai-api-key-here
 SLACK_WEBHOOK_URL=https://hooks.slack.com/services/…
 EOF
 ```
